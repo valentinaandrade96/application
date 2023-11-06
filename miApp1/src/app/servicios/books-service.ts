@@ -29,8 +29,8 @@ export class booksService {
     });
 
   }
-  getBooksBB(datos:any) {
-    const urlBD= `${environment.urlServidor}login`;
+  login(datos:any) {
+    const urlBD= `${environment.urlUsuario}login`;
     return new Promise<any>((resolve, reject) => {
       this.http.post<any>(urlBD,datos).subscribe(resp=>{
         if(resp.status=='fail'){

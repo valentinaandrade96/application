@@ -35,7 +35,20 @@ export class InfiniteScrollPage implements OnInit {
     private navCtrl: NavController,private modalController: ModalController, private router: Router) { }
 
   async ngOnInit() {
+    let respuesta = await this.booksService.login({
+      usuario:'David',
+      pwd:'pepito'
+    });
+    console.log(respuesta);
     
+
+
+
+
+
+
+
+    /*
     let libros = await this.booksService.getBooks();
     this.maxDatos = libros.totalItems;
     this.libros.push(...libros.items);
@@ -45,7 +58,7 @@ export class InfiniteScrollPage implements OnInit {
     })
     this.librosEnVenta=this.librosEnVen.concat(this.librosEnVen)
     this.booksService.librosEnVenta.emit(this.librosQueComprar);
-   
+   */
   }
 
   async loadData() {
